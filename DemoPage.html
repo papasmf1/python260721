@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 CSS3 JavaScript 학습 페이지</title>
+    <style>
+        :root {
+            --bg: linear-gradient(135deg, #f6efe6 0%, #dcecf2 100%);
+            --panel: rgba(255, 255, 255, 0.85);
+            --text: #1f2933;
+            --accent: #d96c06;
+            --accent-dark: #a34f02;
+            --line: rgba(31, 41, 51, 0.12);
+            --shadow: 0 20px 40px rgba(31, 41, 51, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+
+        .container {
+            width: min(1100px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 32px 0 48px;
+        }
+
+        header {
+            background: var(--panel);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            padding: 32px;
+            display: grid;
+            gap: 20px;
+        }
+
+        .hero-badge {
+            width: fit-content;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(217, 108, 6, 0.12);
+            color: var(--accent-dark);
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+        }
+
+        h1, h2, h3 {
+            margin: 0;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 4vw, 3.4rem);
+            line-height: 1.1;
+        }
+
+        p {
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        .hero-card,
+        section {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .hero-card {
+            padding: 20px;
+        }
+
+        main {
+            display: grid;
+            gap: 20px;
+            margin-top: 24px;
+        }
+
+        section {
+            padding: 28px;
+        }
+
+        .section-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 18px;
+        }
+
+        .tag {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--accent-dark);
+            background: rgba(217, 108, 6, 0.1);
+            padding: 6px 12px;
+            border-radius: 999px;
+        }
+
+        .example-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-top: 18px;
+        }
+
+        .example-card {
+            padding: 18px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid var(--line);
+        }
+
+        ul {
+            margin: 12px 0 0;
+            padding-left: 20px;
+        }
+
+        li + li {
+            margin-top: 8px;
+        }
+
+        .code-box {
+            margin-top: 16px;
+            background: #1f2933;
+            color: #f4f7fb;
+            border-radius: 16px;
+            padding: 16px;
+            overflow-x: auto;
+            font-size: 14px;
+        }
+
+        .demo-button {
+            border: 0;
+            border-radius: 14px;
+            padding: 12px 18px;
+            background: var(--accent);
+            color: white;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        .demo-button:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(163, 79, 2, 0.24);
+        }
+
+        .demo-box {
+            margin-top: 16px;
+            padding: 18px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, rgba(217, 108, 6, 0.14), rgba(220, 236, 242, 0.8));
+            transition: transform 0.3s ease, border-radius 0.3s ease, background 0.3s ease;
+        }
+
+        .demo-box.active {
+            transform: scale(1.03) rotate(-1deg);
+            border-radius: 28px;
+            background: linear-gradient(135deg, rgba(163, 79, 2, 0.24), rgba(255, 255, 255, 0.95));
+        }
+
+        .progress-wrap {
+            margin-top: 18px;
+        }
+
+        progress {
+            width: 100%;
+            height: 18px;
+        }
+
+        .js-panel {
+            display: grid;
+            gap: 14px;
+            margin-top: 18px;
+        }
+
+        .counter {
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .input-row {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            min-width: 220px;
+            padding: 12px 14px;
+            border-radius: 14px;
+            border: 1px solid var(--line);
+            font-size: 15px;
+        }
+
+        .message {
+            min-height: 28px;
+            font-weight: 700;
+            color: var(--accent-dark);
+        }
+
+        footer {
+            text-align: center;
+            padding: 24px 12px 8px;
+            color: rgba(31, 41, 51, 0.7);
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                width: min(100% - 20px, 1100px);
+                padding-top: 20px;
+            }
+
+            header,
+            section {
+                padding: 22px;
+                border-radius: 20px;
+            }
+
+            .section-head {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="hero-badge">STUDY PAGE</div>
+            <h1>HTML5, CSS3, JavaScript를 한 번에 연습하는 예제</h1>
+            <p>
+                이 페이지는 하나의 HTML 파일 안에 구조, 디자인, 동작을 모두 담고 있습니다.
+                브라우저에서 열어 보고 태그 구조, 스타일 속성, 자바스크립트 이벤트를 함께 익히기 좋게 만들었습니다.
+            </p>
+            <div class="hero-grid">
+                <article class="hero-card">
+                    <h3>HTML5</h3>
+                    <p>header, main, section, article, footer 같은 시맨틱 태그를 사용했습니다.</p>
+                </article>
+                <article class="hero-card">
+                    <h3>CSS3</h3>
+                    <p>그라디언트, transition, 반응형 grid, hover 효과를 넣었습니다.</p>
+                </article>
+                <article class="hero-card">
+                    <h3>JavaScript</h3>
+                    <p>버튼 클릭, 텍스트 출력, 카운터 증가 같은 기본 상호작용을 구현했습니다.</p>
+                </article>
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <div class="section-head">
+                    <div>
+                        <h2>1. HTML5 구조 보기</h2>
+                        <p>웹 문서를 의미에 맞게 나누는 연습입니다.</p>
+                    </div>
+                    <span class="tag">Semantic Tags</span>
+                </div>
+                <div class="example-grid">
+                    <article class="example-card">
+                        <h3>주요 태그</h3>
+                        <ul>
+                            <li>header: 페이지 소개 영역</li>
+                            <li>main: 핵심 콘텐츠 영역</li>
+                            <li>section: 주제별 콘텐츠 묶음</li>
+                            <li>footer: 마무리 정보 영역</li>
+                        </ul>
+                    </article>
+                    <article class="example-card">
+                        <h3>학습 포인트</h3>
+                        <ul>
+                            <li>태그 이름이 곧 역할을 설명합니다.</li>
+                            <li>검색 엔진과 접근성에 도움이 됩니다.</li>
+                            <li>코드 구조를 읽기 쉽게 만듭니다.</li>
+                        </ul>
+                    </article>
+                </div>
+                <div class="code-box">
+&lt;main&gt;
+    &lt;section&gt;HTML5 예제&lt;/section&gt;
+    &lt;section&gt;CSS3 예제&lt;/section&gt;
+    &lt;section&gt;JavaScript 예제&lt;/section&gt;
+&lt;/main&gt;
+                </div>
+            </section>
+
+            <section>
+                <div class="section-head">
+                    <div>
+                        <h2>2. CSS3 효과 체험</h2>
+                        <p>버튼을 눌러 스타일 변화와 애니메이션을 확인해 보세요.</p>
+                    </div>
+                    <span class="tag">Style & Motion</span>
+                </div>
+                <button class="demo-button" id="styleToggleButton">CSS 효과 바꾸기</button>
+                <div class="demo-box" id="styleDemoBox">
+                    배경, 둥근 모서리, transform, transition이 적용된 박스입니다.
+                </div>
+                <div class="progress-wrap">
+                    <label for="studyProgress">학습 진행률 예시</label>
+                    <progress id="studyProgress" value="65" max="100">65%</progress>
+                </div>
+            </section>
+
+            <section>
+                <div class="section-head">
+                    <div>
+                        <h2>3. JavaScript 동작 연습</h2>
+                        <p>이벤트 처리와 DOM 변경을 가장 간단한 형태로 넣었습니다.</p>
+                    </div>
+                    <span class="tag">DOM Control</span>
+                </div>
+                <div class="js-panel">
+                    <div>
+                        <div>카운터</div>
+                        <div class="counter" id="counterValue">0</div>
+                        <button class="demo-button" id="countButton">1 증가</button>
+                    </div>
+                    <div>
+                        <div>이름 입력</div>
+                        <div class="input-row">
+                            <input type="text" id="nameInput" placeholder="이름을 입력하세요">
+                            <button class="demo-button" id="greetButton">인사말 만들기</button>
+                        </div>
+                        <div class="message" id="greetMessage"></div>
+                    </div>
+                </div>
+                <div class="code-box">
+const button = document.getElementById("countButton");
+button.addEventListener("click", () =&gt; {
+    counter += 1;
+});
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            DemoPage.html 하나로 HTML5, CSS3, JavaScript를 함께 학습할 수 있도록 구성한 학습용 페이지입니다.
+        </footer>
+    </div>
+
+    <script>
+        const styleToggleButton = document.getElementById("styleToggleButton");
+        const styleDemoBox = document.getElementById("styleDemoBox");
+        const countButton = document.getElementById("countButton");
+        const counterValue = document.getElementById("counterValue");
+        const greetButton = document.getElementById("greetButton");
+        const nameInput = document.getElementById("nameInput");
+        const greetMessage = document.getElementById("greetMessage");
+
+        let counter = 0;
+
+        styleToggleButton.addEventListener("click", () => {
+            styleDemoBox.classList.toggle("active");
+        });
+
+        countButton.addEventListener("click", () => {
+            counter += 1;
+            counterValue.textContent = counter;
+        });
+
+        greetButton.addEventListener("click", () => {
+            const name = nameInput.value.trim();
+
+            if (name === "") {
+                greetMessage.textContent = "이름을 입력하면 인사말이 표시됩니다.";
+                return;
+            }
+
+            greetMessage.textContent = `${name}님, JavaScript 이벤트 처리를 잘하고 있습니다.`;
+        });
+    </script>
+</body>
+</html>

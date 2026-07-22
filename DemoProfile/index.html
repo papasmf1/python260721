@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="papasmf1 개발자 포트폴리오 - Python, Web, Java 중심" />
+  <title>papasmf1 | Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-orb orb-1" aria-hidden="true"></div>
+  <div class="bg-orb orb-2" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#home">KJD</a>
+    <nav>
+      <ul class="menu">
+        <li><a href="#about">소개</a></li>
+        <li><a href="#skills">기술</a></li>
+        <li><a href="#projects">프로젝트</a></li>
+        <li><a href="#contact">연락처</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero reveal">
+      <p class="eyebrow">DEVELOPER PORTFOLIO</p>
+      <h1>papasmf1</h1>
+      <p class="subtitle">Python, Web, Java 기반으로 문제를 빠르고 안정적으로 해결하는 개발자</p>
+      <div class="hero-cta">
+        <a class="btn primary" href="#projects">프로젝트 보기</a>
+        <a class="btn ghost" href="mailto:papasmf1@gmail.com">이메일 보내기</a>
+      </div>
+    </section>
+
+    <section id="about" class="card reveal">
+      <h2>About Me</h2>
+      <p>
+        사용자 경험과 유지보수성을 동시에 고려하는 개발을 지향합니다.
+        아이디어를 빠르게 프로토타입으로 만들고, 검증된 구조로 발전시키는 과정을 좋아합니다.
+      </p>
+      <div class="identity-grid">
+        <article>
+          <h3>이름</h3>
+          <p>papasmf1</p>
+        </article>
+        <article>
+          <h3>이메일</h3>
+          <p><a href="mailto:papasmf1@gmail.com">papasmf1@gmail.com</a></p>
+        </article>
+        <article>
+          <h3>핵심 가치</h3>
+          <p>명확한 구조, 실용적 성능, 꾸준한 개선</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="card reveal">
+      <h2>Skills</h2>
+      <div class="chips">
+        <span>Python</span>
+        <span>Java</span>
+        <span>HTML5</span>
+        <span>CSS3</span>
+        <span>JavaScript</span>
+        <span>REST API</span>
+        <span>SQL</span>
+        <span>Git</span>
+      </div>
+    </section>
+
+    <section id="projects" class="reveal">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <article class="project-card">
+          <h3>업무 자동화 도구</h3>
+          <p>Python 스크립트로 반복 작업을 자동화하여 시간을 절감한 프로젝트.</p>
+          <p class="stack">Python · File I/O · Scheduling</p>
+        </article>
+        <article class="project-card">
+          <h3>반응형 웹 페이지</h3>
+          <p>HTML5/CSS3/JavaScript 기반으로 다양한 화면에 대응하는 UI 구현.</p>
+          <p class="stack">HTML5 · CSS3 · JavaScript</p>
+        </article>
+        <article class="project-card">
+          <h3>Java 백엔드 모듈</h3>
+          <p>객체지향 구조와 예외 처리를 강화하여 유지보수성을 높인 모듈 개발.</p>
+          <p class="stack">Java · OOP · Exception Handling</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="card reveal">
+      <h2>Contact</h2>
+      <p>협업 제안이나 문의는 아래 이메일로 연락 주세요.</p>
+      <a class="mail-link" href="mailto:papasmf1@gmail.com">papasmf1@gmail.com</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> papasmf1. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
