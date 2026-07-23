@@ -23,8 +23,10 @@ for i in range(0,10):
     lst = soup.find_all('span', attrs={'data-role':'list-title-text'})
     for tag in lst:
         title = tag.text.strip()
-        print(title)
-        f.write(title + "\n")
+        #원하는 매물만 검색
+        if (re.search('맥미니', title)):
+            print(title)
+            f.write(title + "\n")
 
 f.close() 
 print("저장완료")

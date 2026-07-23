@@ -24,8 +24,10 @@ for i in range(1, 11):
     for tag in lst:
         #한번 더 <a>태그를 검색 
         title = tag.find("a").text.strip()
-        print(title)
-        f.write(title + "\n")
+        #검색
+        if (re.search('일본', title)):
+            print(title)
+            f.write(title + "\n")
 
 f.close() 
 print("저장완료")
