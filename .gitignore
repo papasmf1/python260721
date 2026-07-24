@@ -1,0 +1,8 @@
+# Environment variables
+#깃허브에 업로드하지 않을 파일들을 명시하는 곳입니다.
+.env
+컴퓨터비전Qt6.py 
+\build
+\dist 
+\강아지
+\고양이 
